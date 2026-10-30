@@ -1,0 +1,66 @@
+{
+  "title": "Arena — Ideas into Reality",
+  "verified_at_utc": "2026-10-30",
+  "renderer": "Remotion 4.0.539",
+  "video": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "pix_fmt": "yuv420p",
+    "color_range": "tv",
+    "color_space": "bt709",
+    "color_transfer": "bt709",
+    "color_primaries": "bt709",
+    "avg_frame_rate": "30/1",
+    "duration": "42.000000",
+    "nb_frames": "1260"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "48000",
+    "channels": 2,
+    "channel_layout": "stereo",
+    "duration": "42.005000",
+    "bit_rate": "189376"
+  },
+  "audio_note": "AAC container duration includes 5 ms encoder padding; video and source score are exactly 42 seconds.",
+  "bytes": 9393947,
+  "sha256": "9856981408af9cb127a5ab4e67003243cce5c36267f4f5ca9f48b20c1f51ee0a",
+  "checks": {
+    "typescript": "pass",
+    "unit_tests": "5/5 pass",
+    "full_audio_video_decode": "pass",
+    "review_production_build": "pass",
+    "desktop_overflow": "none",
+    "mobile_overflow": "none",
+    "browser_runtime_errors": [],
+    "original_firebase_files": "unchanged",
+    "rendered_still_frames_reviewed": 14,
+    "encoded_frames_reviewed": [
+      495,
+      945,
+      1200
+    ]
+  },
+  "audio_measurement": {
+    "integrated_lufs": -17.0,
+    "true_peak_dbtp": -2.17,
+    "loudness_range_lu": 4.9,
+    "method": "FFmpeg loudnorm analysis; no normalization applied"
+  },
+  "creative": {
+    "chapters": 6,
+    "arabic_shaping": "whole-line RTL reveals; no isolated-letter animation",
+    "fonts": [
+      "IBM Plex Sans Arabic",
+      "Space Grotesk",
+      "JetBrains Mono"
+    ],
+    "music": "Original deterministic synthesis; no external samples",
+    "company_svg_icons": 11
+  },
+  "upstream": {
+    "remotion_skills": "30d4553ecd46fbc5212fd0ff006ae43af522158b",
+    "remotion_ui": "0aecaca2b61a167992e1205d10e4da16d8a71331"
+  }
+}

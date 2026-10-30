@@ -1,0 +1,53 @@
+{
+  "name": "arena-ideas-in-motion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An original bilingual motion film about the Arena.ai assistant, built with Remotion.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "studio": "remotion studio src/remotion/index.ts --port=3001 --no-open --ipv4",
+    "check": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "audio": "python3 scripts/generate_audio.py",
+    "still": "remotion still src/remotion/index.ts ArenaFilm deliverables/poster.png --frame=125 --color-space=bt709",
+    "render": "tsx scripts/render.ts",
+    "render:standard": "remotion render src/remotion/index.ts ArenaFilm deliverables/arena-agent-film.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --color-space=bt709 --concurrency=2 --gl=swiftshader --timeout=120000",
+    "preview": "vite preview --host 0.0.0.0 --port 3000",
+    "build:review": "tsc --noEmit && vite build && node scripts/copy-review-assets.mjs",
+    "assets": "node scripts/sync-assets.mjs",
+    "qa": "tsx scripts/qa.ts",
+    "build": "npm run build:review"
+  },
+  "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "5.3.0",
+    "@fontsource-variable/space-grotesk": "5.3.0",
+    "@fontsource/ibm-plex-sans-arabic": "5.3.0",
+    "@remotion/fonts": "4.0.539",
+    "@remotion/media": "4.0.539",
+    "@remotion/paths": "^4.0.539",
+    "@remotion/player": "4.0.539",
+    "@remotion/shapes": "4.0.539",
+    "@remotion/transitions": "4.0.539",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "^4.0.539",
+    "simple-icons": "16.36.0"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.539",
+    "@sparticuz/chromium": "153.0.0",
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.1",
+    "playwright-core": "^1.58.0",
+    "remotion-ui": "0.9.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

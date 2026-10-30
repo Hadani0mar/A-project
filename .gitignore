@@ -65,5 +65,13 @@ node_modules/
 # dotenv environment variables file
 .env
 
-# dataconnect generated files
+# # dataconnect generated files
 .dataconnect
+
+# Remotion / review app working files (the original dist/ Firebase page is preserved)
+.cache/
+.remotion/
+build-review/
+qa/
+*.tsbuildinfo
+# Final MP4, poster, and audio are intentionally tracked deliverables.
