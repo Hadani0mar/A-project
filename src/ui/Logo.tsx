@@ -32,13 +32,13 @@ export const LogoMark: React.FC<{ size?: number; drawProgress: number }> = ({
       </defs>
       {/* حلقة خارجية منقّطة دوّارة ببطء */}
       <g style={{ transform: `rotate(${frame * 0.25}deg)`, transformOrigin: '100px 100px', opacity: 0.5 }}>
-        <circle cx="100" cy="100" r="98" fill="none" stroke="rgba(160,180,255,0.35)" strokeWidth="1.5" strokeDasharray="3 9" />
+        <circle cx="100" cy="100" r="98" fill="none" stroke="rgba(70,95,150,0.45)" strokeWidth="1.5" strokeDasharray="3 9" />
       </g>
       {/* الحلقة الرئيسية تُرسم */}
       <path d={RING} fill="none" stroke="url(#logo-grad)" strokeWidth="7" strokeLinecap="round"
         strokeDasharray={ring.strokeDasharray} strokeDashoffset={ring.strokeDashoffset} />
       {/* حرف A يُرسم */}
-      <path d={LETTER_A} fill="none" stroke="#F2F5FF" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round"
+      <path d={LETTER_A} fill="none" stroke="#0E1B33" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round"
         strokeDasharray={letter.strokeDasharray} strokeDashoffset={letter.strokeDashoffset} />
       {/* نقطة مدارية */}
       {drawProgress > 0.85 && (

@@ -18,7 +18,7 @@ export const BrandIcon: React.FC<{
   size: number;
   color?: string;
 }> = ({ icon, size, color }) => {
-  const fill = color ?? (DARK_HEX.has(icon.hex.toUpperCase()) ? '#E8ECF8' : `#${icon.hex}`);
+  const fill = color ?? (DARK_HEX.has(icon.hex.toUpperCase()) ? '#171A21' : `#${icon.hex}`);
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" aria-label={icon.title}>
       <path d={icon.path} fill={fill} />

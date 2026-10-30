@@ -77,7 +77,7 @@ export const ArenaAgentVideo: React.FC = () => {
   });
 
   return (
-    <AbsoluteFill style={{ backgroundColor: '#070B16' }}>
+    <AbsoluteFill style={{ backgroundColor: '#EEF3FD' }}>
       {/* موسيقى خلفية (مولّدة بـ scripts/make-audio.py) تحت التعليق */}
       <Audio
         src={staticFile('audio/music.mp3')}

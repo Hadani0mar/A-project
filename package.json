@@ -7,7 +7,8 @@
     "studio": "remotion studio src/index.ts",
     "render": "remotion render src/index.ts ArenaAgentVideo out/arena-agent.mp4",
     "render:sandbox": "node scripts/render-sandbox.mjs",
-    "still": "remotion still src/index.ts ArenaAgentVideo out/poster.png --frame=90",
+    "still": "remotion still src/index.ts ArenaAgentVideo out/poster.jpg --frame=265",
+    "serve:video": "node scripts/serve-video.mjs",
     "typecheck": "tsc --noEmit",
     "browser:ensure": "remotion browser ensure"
   },

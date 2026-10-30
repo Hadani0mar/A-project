@@ -10,7 +10,7 @@
 | المستودع | شنو خذينا منه |
 |---|---|
 | `remotion-dev/skills` | مهارات Remotion الرسمية (12 مهارة) — مثبّتة في `.agents/skills/` بملف `skills-lock.json` |
-| `AMFahim/remotion-ui` (RemotionUI) | فلسفة "مكوّنات انسخها واملكها" بأسلوب shadcn — ~206 مكوّناً (Scenes/Primitives/Data/Transitions) |
+| `AMFahim/remotion-ui` (RemotionUI) | مكوّنات فعلية منسوخة إلى `src/remotionui/` بترخيص MIT: AuroraBg · SimulatedCursor · ConfettiBurst · StatCard · KanbanMove (مهيّأة للخطوط المحلية) |
 | `rrh1441/remotion-ui` | نظام `@remotion-ui/core` (FadeIn/SlideIn/Stagger…) + مكوّنات مركّبة (TitleCard/LowerThird/StatBlock) |
 | `lifeprompt-team/remotion-scenes` | 201 مشهد موشن جاهز في 16 فئة (Text/Shapes/UI/Data/Particles/Cinematic…) |
 | `GTKottman/remotion-transitions` | تصنيف (Taxonomy) من 50 انتقالاً في عائلات: Cut · Blend · Wipe · Cover · Motion · Distortion · Morph · Carry · Light |
@@ -34,15 +34,15 @@
 | 1 | **Kinetic Typography** | نص عملاق يتحرك ويحمل المعنى | مشهد 2 (أربع كلمات × 4 تقنيات دخول) |
 | 2 | **Logo Reveal / Stinger** | كشف شعار برسم الخطوط Stroke Draw-On | مشهد 1 (الافتتاح) + مشهد 7 (ختام سريع) |
 | 3 | **Motion Trails / Echo** | نسخ شبحية متراجعة وراء العنصر | كلمة "وأُبدع" + حلقات الصدى حول الشعار |
-| 4 | **Glassmorphism + Bento UI** | بطاقات زجاجية ضبابية في شبكة | مشهد 3 (6 بطاقات قدرات) |
-| 5 | **Data-Driven Motion** | عدّادات وأشرطة تقدّم متحركة | إحصائيات مشهد 3 + عدّاد أسطر الكود |
-| 6 | **UI/Product Animation** | محاكاة واجهة حقيقية (محرّر كود + طرفية) | مشهد 4 (كتابة حية Typewriter) |
-| 7 | **Cel-Spin / Orbit** | عناصر تدور في مدار مع تثبيت الاتجاه | مشهد 5 (8 أيقونات أدوات حول الشعار) |
+| 4 | **Rich Color Panels + Bento UI** | لوحات/بطاقات باستيل مشبعة على خلفية فاتحة | كل المشاهد، وخصوصاً مشهدي 2 و3 |
+| 5 | **Data-Driven Motion** | عدّادات وأشرطة تقدّم وبطاقة إحصائية | StatCard ‏100% في مشهد 3 + عدّاد أسطر الكود والتكاملات |
+| 6 | **UI/Product Animation** | محاكاة واجهات حقيقية: محادثة، داشبورد، محرّر ومعاينة منتج | مشاهد 1 و3 و4 مع مؤشّر محاكى ونقرات |
+| 7 | **Integration Toggles** | مفاتيح تشغيل/إيقاف دقيقة الحركة مع عدّاد حالة | مشهد 5 (تشغيل أدوات التطوير تباعاً) |
 | 8 | **Marquee / Logo Wall** | شريط شعارات منساب بلا نهاية | أسفل مشهد 5 (10 علامات) |
-| 9 | **Line-Led Timeline** | خط يقود العين ويفعّل العقد تباعاً | مشهد 6 (من الفكرة للنشر — اتجاه RTL) |
-| 10 | **Parallax Depth** | طبقات خلفية بسرعات مختلفة للعمق | النص الشبحي مشهد 2 + توهجات Aurora |
-| 11 | **Gradient Glow / Aurora** | توهجات ملوّنة ضبابية ناعمة | خلفية كل المشاهد (`AuroraBackground`) |
-| 12 | **Particle Field / Confetti** | جسيمات جوّية + انفجار احتفالي | خلفيات 1/7 + لحظة زر CTA |
+| 9 | **Kanban Journey** | بطاقات تُرفع وتنحني بين الأعمدة وتعيد ترتيب اللوحة | مشهد 6 (`KanbanMove` — من الفكرة للنشر باتجاه RTL) |
+| 10 | **Parallax Depth** | طبقات خلفية بسرعات/مواضع مختلفة للعمق | دوائر وبقع باستيل ونقاط `RichBackdrop` |
+| 11 | **Rich Aurora / Pastel Blobs** | أشرطة وبقع ملوّنة ناعمة فوق قماش فاتح | `AuroraBg` بخلفية شفافة فوق ‎#EEF3FD في `RichBackdrop` |
+| 12 | **Simulated Cursor / Confetti** | مؤشّر يتحرك وينقر ثم انفجار احتفالي | زر النشر في مشهد 4 + زر CTA في مشهد 7 |
 | 13 | **Lower-Third Captions** | ترجمة سفلية أنيقة متزامنة مع الصوت | كل المشاهد (`CaptionBar`) |
 | 14 | **Cinematic Transitions** | Wipe · Clock-Wipe · Flip · Iris · Slide · Fade | بين المشاهد الستة (18 فريم/انتقال) |
 
@@ -54,9 +54,9 @@
 - `@remotion/transitions` — fade/slide/wipe/clockWipe/flip/iris عبر `<TransitionSeries>`
 - `@remotion/paths` — `evolvePath`/`getPointAtLength` لرسم الشعار والخط الزمني
 - `@remotion/shapes` · `@remotion/layout-utils` — أشكال وقياسات تخطيط
-- `@remotion/fonts` + `@remotion/google-fonts` — تحميل الخطوط وحظر الرندر حتى تجهز
+- `@remotion/fonts` — تحميل ملفات woff2 المحلية وحظر الرندر حتى تجهز (لا توجد طلبات شبكة للخطوط)
 
-**مجتمعية (نمط التصميم):** بنينا مكتبتنا الخاصة في [`src/ui/primitives.tsx`](../src/ui/primitives.tsx) بنفس فلسفة RemotionUI (مكوّنات تملك سورسها): `RiseIn` · `WordStagger` · `GlassCard` · `Chip` · `AnimatedCounter` · `ProgressBar` · `CaptionBar` · `AuroraBackground` · `Particles` · `CornerMark`.
+**مجتمعية (مستخدمة فعلياً):** مكوّنات RemotionUI منسوخة بنمط shadcn إلى [`src/remotionui/`](../src/remotionui/) بترخيص MIT ومكيّفة للخطوط المحلية: `AuroraBg` · `SimulatedCursor` · `ConfettiBurst` · `StatCard` · `KanbanMove`. وإلى جانبها طقم المشروع الفاتح في [`src/ui/primitives.tsx`](../src/ui/primitives.tsx): `RichBackdrop` · `PanelCard` · `WhiteCard` · `BrowserFrame` · `ToggleSwitch` · `StatusPill` · `ProgressBar` · `AnimatedCounter` · `SectionTitle` · `CaptionBar`.
 
 ---
 
@@ -69,7 +69,7 @@
 | **Space Grotesk** (500/700) | الأرقام والتسميات اللاتينية | `@fontsource/space-grotesk` |
 | **JetBrains Mono** (400/700) | محرّر الكود والطرفية | `@fontsource/jetbrains-mono` |
 
-> لماذا محلياً؟ الرندر يصير حتمياً وبدون إنترنت (رابط Google Fonts المباشر عبر `@remotion/google-fonts` مثبّت أيضاً كبديل أونلاين). تُحمَّل بـ `@remotion/fonts` + `staticFile` فتتوقف الفريمات حتى تجهز الخطوط.
+> لماذا محلياً؟ أسماء الخطوط من Google Fonts لكن الملفات نفسها محلية، فيصير الرندر حتمياً وبدون أي طلب شبكة. تُحمَّل بـ `@remotion/fonts` + `staticFile` فتتوقف الفريمات حتى تجهز الخطوط.
 
 **قواعد العربي (من مهارة `remotion-markup/arabic-text.md` الرسمية):**
 - حرّك **الكلمات** لا الحروف — الحرف العربي في صندوق مستقل ينفصل عن وصلاته ويتشوّه.
@@ -83,8 +83,8 @@
 
 - **Spring physics بدل المنحنيات الجاهزة** للدخولات (`damping 11–17`) يعطي Overshoot عضوي (Follow-Through).
 - **`interpolate` + `Easing.bezier`** للمزامنات الدقيقة مع الصوت (Timing) — مدد المشاهد محسوبة من أطوال MP3 الحقيقية.
-- **Arcs**: أيقونات الأدوات تتحرك في قوس إهليجي، وقصاصات الاحتفال بقوس جاذبية.
-- **Secondary Action**: جسيمات، نقطة مدارية، مؤشّر وامض — تفاصيل تثري دون تشتيت (Staging: عين المشاهد دائماً لعنصر واحد).
+- **Arcs**: بطاقات الكانبان تنحني بين الأعمدة، والمؤشّر يسلك مسارات منحنية، وقصاصات الاحتفال بقوس جاذبية.
+- **Secondary Action**: مؤشّر محاكى، مفاتيح تشغيل، شارات حالة ونبضات لونية — تفاصيل تثري دون تشتيت (Staging: عين المشاهد دائماً لعنصر واحد).
 - **Exaggeration**: عناوين 205px وأرقام عملاقة. **Determinism**: `Math.random` ممنوع — بذرة `mulberry32` لكل العشوائي.
 
 ### روابط المصادر
